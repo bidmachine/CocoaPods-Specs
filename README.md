@@ -1,0 +1,1 @@
+# BidMachine CocoaPods Specs Registry
