@@ -1,0 +1,63 @@
+{
+  "name": "StackModules",
+  "version": "1.7.2",
+  "summary": "Supported modules for Stack iOS products",
+  "homepage": "https://bidmachine.io",
+  "license": {
+    "type": "Commercial",
+    "text": "https://bidmachine.io/sdk-license-agreement/"
+  },
+  "authors": {
+    "BidMachine": "https://bidmachine.io"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source": {
+    "http": "https://s3-us-west-1.amazonaws.com/appodeal-ios/StackModules/1.7.2/20240329/StackModules.zip"
+  },
+  "swift_versions": "5.1",
+  "vendored_frameworks": [
+    "StackModules-1.7.2/StackFoundation.xcframework",
+    "StackModules-1.7.2/StackUIKit.xcframework",
+    "StackModules-1.7.2/StackProductPresentation.xcframework"
+  ],
+  "resource_bundles": {
+    "StackFoundation": [
+      "StackModules-1.7.2/StackFoundation.bundle"
+    ],
+    "StackUIKit": [
+      "StackModules-1.7.2/StackUIKit.bundle"
+    ],
+    "StackProductPresentation": [
+      "StackModules-1.7.2/StackProductPresentation.bundle"
+    ]
+  },
+  "frameworks": [
+    "SafariServices",
+    "StoreKit",
+    "WebKit",
+    "CoreTelephony",
+    "SystemConfiguration",
+    "AdSupport",
+    "CoreLocation",
+    "MobileCoreServices",
+    "AVFoundation",
+    "AudioToolbox",
+    "UIKit",
+    "ImageIO",
+    "CoreGraphics"
+  ],
+  "libraries": [
+    "z"
+  ],
+  "pod_target_xcconfig": {
+    "OTHER_LDFLAGS": "-lObjC",
+    "VALID_ARCHS[sdk=iphoneos*]": "arm64",
+    "VALID_ARCHS[sdk=iphonesimulator*]": "x86_64 arm64"
+  },
+  "user_target_xcconfig": {
+    "OTHER_LDFLAGS": "-lObjC"
+  },
+  "swift_version": "5.1"
+}
