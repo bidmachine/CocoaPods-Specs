@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '12.0'
   s.source       = { 
-    :http => "https://s3-us-west-1.amazonaws.com/appodeal-ios/StackModules/#{s.version}/StackModules.zip"
+    :http => "https://bidmachine-ios.s3.amazonaws.com/#{s.name}/#{s.version}/pod/#{s.name}.zip"
   }
 
   s.default_subspec   = "Static"
@@ -38,16 +38,16 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Core-Dynamic' do |ss|
-    ss.vendored_frameworks = 'Dynamic/StackModules.xcframework'
+    ss.vendored_frameworks = 'release/Dynamic/StackModules.xcframework'
   end
 
   s.subspec 'ProductPresentation-Dynamic' do |ss|
-    ss.vendored_frameworks = 'Dynamic/StackProductPresentation.xcframework'
+    ss.vendored_frameworks = 'release/Dynamic/StackProductPresentation.xcframework'
     ss.dependency 'StackModules/Core-Dynamic'
   end
 
   s.subspec 'Rendering-Dynamic' do |ss|
-    ss.vendored_frameworks = 'Dynamic/StackRendering.xcframework'
+    ss.vendored_frameworks = 'release/Dynamic/StackRendering.xcframework'
     ss.dependency 'StackModules/Core-Dynamic'
     ss.dependency 'StackModules/ProductPresentation-Dynamic'
     ss.dependency 'OMSDK_Appodeal', '~> 1.4.12'
@@ -61,27 +61,27 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Core-Static' do |ss|
-    ss.vendored_frameworks = 'Static/StackModules.xcframework'
+    ss.vendored_frameworks = 'release/Static/StackModules.xcframework'
     ss.resource_bundles = {
-      'StackModules' => ['Static/StackModules.xcframework/ios-arm64/**/PrivacyInfo.xcprivacy']
+      'StackModules' => ['release/Static/StackModules.xcframework/ios-arm64/**/PrivacyInfo.xcprivacy']
     }
   end
 
   s.subspec 'ProductPresentation-Static' do |ss|
-    ss.vendored_frameworks = 'Static/StackProductPresentation.xcframework'
+    ss.vendored_frameworks = 'release/Static/StackProductPresentation.xcframework'
     ss.dependency 'StackModules/Core-Static'
     ss.resource_bundles = {
-      'StackProductPresentation' => ['Static/StackProductPresentation.xcframework/ios-arm64/**/PrivacyInfo.xcprivacy'],
+      'StackProductPresentation' => ['release/Static/StackProductPresentation.xcframework/ios-arm64/**/PrivacyInfo.xcprivacy'],
     }
   end
 
   s.subspec 'Rendering-Static' do |ss|
-    ss.vendored_frameworks = 'Static/StackRendering.xcframework'
+    ss.vendored_frameworks = 'release/Static/StackRendering.xcframework'
     ss.dependency 'StackModules/Core-Static'
     ss.dependency 'StackModules/ProductPresentation-Static'
     ss.dependency 'OMSDK_Appodeal', '~> 1.4.12'
     ss.resource_bundles = {
-      'StackRendering' => ['Static/StackRendering.xcframework/ios-arm64/**/PrivacyInfo.xcprivacy'],
+      'StackRendering' => ['release/Static/StackRendering.xcframework/ios-arm64/**/PrivacyInfo.xcprivacy'],
     }
   end
 
