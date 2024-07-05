@@ -50,7 +50,7 @@ Pod::Spec.new do |s|
     ss.vendored_frameworks = 'release/Dynamic/StackRendering.xcframework'
     ss.dependency 'StackModules/Core-Dynamic'
     ss.dependency 'StackModules/ProductPresentation-Dynamic'
-    ss.dependency 'OMSDK_Appodeal', '~> 1.4.12'
+    ss.dependency 'OMSDK_Appodeal', '~> 1.5.0'
   end
   
   # Static subspecs
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
     ss.vendored_frameworks = 'release/Static/StackRendering.xcframework'
     ss.dependency 'StackModules/Core-Static'
     ss.dependency 'StackModules/ProductPresentation-Static'
-    ss.dependency 'OMSDK_Appodeal', '~> 1.4.12'
+    ss.dependency 'OMSDK_Appodeal', '~> 1.5.0'
     ss.resource_bundles = {
       'StackRendering' => ['release/Static/StackRendering.xcframework/ios-arm64/**/PrivacyInfo.xcprivacy'],
     }
